@@ -14,6 +14,7 @@
   --chart-1: #7ED957;
   --chart-2: #3E8F2B;
   --chart-3: #5A8F3A;
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", "Segoe UI", sans-serif;
   --danger: #FFB26B;
   --shadow-1: 0 22px 60px rgba(12, 26, 14, 0.18);
   --shadow-2: 0 10px 30px rgba(12, 26, 14, 0.12);
@@ -72,7 +73,7 @@ html {
 
 body {
   margin: 0;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: var(--font-sans);
   color: var(--ink-900);
   background: radial-gradient(900px 600px at 12% -10%, rgba(126, 217, 87, 0.25), transparent 60%),
     radial-gradient(800px 500px at 88% 0%, rgba(230, 247, 216, 0.9), transparent 60%),
@@ -286,7 +287,7 @@ main, header, footer {
 }
 
 .hero-title {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: var(--font-sans);
   font-size: clamp(36px, 4vw, 56px);
   line-height: 1.05;
   margin: 0 0 18px;
@@ -410,7 +411,7 @@ main, header, footer {
 }
 
 .section-title {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: var(--font-sans);
   font-size: clamp(28px, 3.2vw, 40px);
   margin: 0 0 8px;
   font-weight: 600;
@@ -962,7 +963,7 @@ body.modal-open {
 
 .banner h3 {
   margin: 0 0 10px;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: var(--font-sans);
 }
 
 .footer {
