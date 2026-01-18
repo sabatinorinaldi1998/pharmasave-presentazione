@@ -401,6 +401,9 @@ const translations = {
   }
 };
 
+const PIN_CODE = "2153";
+const PIN_STORAGE_KEY = "pharmasave_pin_ok";
+
 const financialScenarios = {
   with: {
     years: [2026, 2027, 2028, 2029, 2030, 2031, 2032],
@@ -928,6 +931,47 @@ function setupDemoModal() {
   });
 }
 
+function setupPinGate() {
+  const overlay = document.getElementById("pin-overlay");
+  const form = document.getElementById("pin-form");
+  const input = document.getElementById("pin-input");
+  const error = document.getElementById("pin-error");
+  if (!overlay || !form || !input || !error) return;
+
+  const unlock = () => {
+    overlay.classList.add("is-hidden");
+    overlay.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("pin-locked");
+    overlay.style.display = "none";
+  };
+
+  if (sessionStorage.getItem(PIN_STORAGE_KEY) === "true") {
+    unlock();
+    return;
+  }
+
+  document.body.classList.add("pin-locked");
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const value = input.value.replace(/\D/g, "");
+    if (value === PIN_CODE) {
+      sessionStorage.setItem(PIN_STORAGE_KEY, "true");
+      unlock();
+      input.value = "";
+      return;
+    }
+
+    error.classList.add("is-visible");
+    input.classList.add("is-error");
+    input.value = "";
+    setTimeout(() => {
+      error.classList.remove("is-visible");
+      input.classList.remove("is-error");
+    }, 1800);
+  });
+}
+
 function setupReveal() {
   const observer = new IntersectionObserver(
     (entries) => {
@@ -963,6 +1007,7 @@ function initLanguage() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  setupPinGate();
   initLanguage();
   setupScenarioToggle();
   setupDemoModal();
