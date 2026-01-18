@@ -1,0 +1,6 @@
+<svg width="240" height="56" viewBox="0 0 240 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="1" y="1" width="238" height="54" rx="12" fill="#0B0D0C" stroke="#33C8A0" stroke-width="2"/>
+  <path d="M20 30C20 24.477 24.477 20 30 20H44C49.523 20 54 24.477 54 30C54 35.523 49.523 40 44 40H30C24.477 40 20 35.523 20 30Z" fill="#33C8A0"/>
+  <path d="M32 25H42V35H32V25Z" fill="#0B0D0C"/>
+  <text x="70" y="36" font-family="Space Grotesk, sans-serif" font-size="20" fill="#E6FFF8" letter-spacing="0.5">PharmaSave</text>
+</svg>
