@@ -443,6 +443,86 @@ main, header, footer {
   justify-content: center;
 }
 
+.pin-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.96);
+  transition: opacity 0.25s ease;
+}
+
+.pin-overlay.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.pin-card {
+  width: min(420px, 92vw);
+  background: #FFFFFF;
+  border: 1px solid rgba(126, 217, 87, 0.35);
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: var(--shadow-1);
+  text-align: center;
+}
+
+.pin-card h2 {
+  margin: 0 0 8px;
+  font-size: 24px;
+}
+
+.pin-card p {
+  margin: 0 0 18px;
+  color: var(--ink-600);
+}
+
+.pin-form {
+  display: grid;
+  gap: 12px;
+}
+
+.pin-form input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(126, 217, 87, 0.3);
+  background: #FFFFFF;
+  color: var(--ink-900);
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 0.2em;
+  font-family: var(--font-sans);
+}
+
+.pin-form input:focus {
+  outline: none;
+  border-color: var(--mint-500);
+  box-shadow: 0 0 0 3px rgba(126, 217, 87, 0.2);
+}
+
+.pin-form input.is-error {
+  border-color: #D64545;
+  box-shadow: 0 0 0 2px rgba(214, 69, 69, 0.2);
+}
+
+.pin-error {
+  display: none;
+  color: #D64545;
+  font-size: 12px;
+}
+
+.pin-error.is-visible {
+  display: block;
+}
+
+body.pin-locked {
+  overflow: hidden;
+}
+
 .demo-modal {
   position: fixed;
   inset: 0;
