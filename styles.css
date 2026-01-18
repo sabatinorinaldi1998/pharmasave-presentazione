@@ -832,6 +832,19 @@ body.modal-open {
   margin-bottom: 18px;
 }
 
+.chart-title {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.chart-unit {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-500);
+}
+
 .chart-header h3 {
   margin: 0;
 }
@@ -1200,7 +1213,7 @@ body.modal-open {
   }
 
   .section-cta .button {
-    width: 100%;
+    width: auto;
   }
 
   .chart-table {
@@ -1225,11 +1238,19 @@ body.modal-open {
   }
 
   .demo-actions {
-    justify-content: stretch;
+    justify-content: center;
   }
 
   .demo-actions .button {
-    width: 100%;
+    width: auto;
+  }
+
+  .banner {
+    text-align: center;
+  }
+
+  .banner .button {
+    margin: 0 auto;
   }
 
   .pin-card {
