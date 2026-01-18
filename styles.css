@@ -78,6 +78,9 @@ body {
   background: radial-gradient(900px 600px at 12% -10%, rgba(126, 217, 87, 0.25), transparent 60%),
     radial-gradient(800px 500px at 88% 0%, rgba(230, 247, 216, 0.9), transparent 60%),
     linear-gradient(180deg, #FFFFFF 0%, #F6FAF3 100%);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
   min-height: 100vh;
   overflow-x: hidden;
   position: relative;
@@ -1119,12 +1122,45 @@ body.modal-open {
     grid-column: auto;
   }
 
+  .hero {
+    padding: 90px 0 60px;
+  }
+
+  .hero-grid {
+    gap: 20px;
+  }
+
+  .hero-card {
+    padding: 22px;
+  }
+
+  .hero-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero-metric {
+    padding: 10px 12px;
+  }
+
   .nav-links {
     display: none;
   }
 
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   .compare {
     grid-template-columns: 1fr;
+  }
+
+  .chart-card {
+    padding: 20px;
+  }
+
+  .chart-wrap {
+    padding: 12px;
   }
 }
 
@@ -1133,19 +1169,84 @@ body.modal-open {
     font-size: 34px;
   }
 
+  .hero-subtitle {
+    font-size: 16px;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-cta .button {
+    width: 100%;
+    text-align: center;
+  }
+
   .section {
     padding: 60px 0;
+  }
+
+  .section-title {
+    font-size: clamp(24px, 6vw, 32px);
+  }
+
+  .section-subtitle {
+    font-size: 15px;
+  }
+
+  .card {
+    min-height: auto;
+  }
+
+  .section-cta .button {
+    width: 100%;
   }
 
   .chart-table {
     font-size: 11px;
   }
 
+  #financial-chart {
+    height: 220px;
+  }
+
+  #financial-chart text {
+    font-size: 9px;
+  }
+
   .demo-grid {
     grid-template-columns: 1fr;
   }
 
+  .demo-card {
+    max-height: 88vh;
+    overflow-y: auto;
+  }
+
   .demo-actions {
-    justify-content: center;
+    justify-content: stretch;
+  }
+
+  .demo-actions .button {
+    width: 100%;
+  }
+
+  .pin-card {
+    width: min(360px, 94vw);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 80px 0 50px;
+  }
+
+  .hero-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .metric-value {
+    font-size: 18px;
   }
 }
